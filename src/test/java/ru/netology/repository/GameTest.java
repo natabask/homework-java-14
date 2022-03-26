@@ -5,8 +5,6 @@ import org.junit.jupiter.api.Test;
 import ru.netology.domain.NotRegisteredException;
 import ru.netology.domain.Player;
 
-import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class GameTest {
@@ -18,22 +16,10 @@ class GameTest {
 
     @BeforeEach
     void shouldRegisterAllPlayers() {
-        game.registerAll(List.of(player1, player2, player3, player4));
-    }
-
-    @Test
-    void shouldFindAllRegisteredPlayers() {
-        assertEquals(List.of(player1, player2, player3, player4), game.findAll());
-    }
-
-    @Test
-    void shouldFindByNameWhenExist() {
-        assertEquals(player3, game.findByName("Felix"));
-    }
-
-    @Test
-    void shouldReturnNullWhenNotExist() {
-        assertNull(game.findByName("Olga"));
+        game.register(player1);
+        game.register(player2);
+        game.register(player3);
+        game.register(player4);
     }
 
     @Test
